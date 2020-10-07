@@ -75,12 +75,12 @@ const content = '\n'+
     '\n</div>';
 
 function get_bonus_die(html) {
-    let field  = html.find('.drill-die.dialog [name="bonus"]');
+    let field = html.find('.drill-die.dialog [name="bonus"]');
     if(!field) {
         console.error("Bonus dice field not found");
         return 0;
     }
-    let v = Number.parseInt([0].value);
+    let v = Number.parseInt(field[0].value);
     if(Number.isNaN(v)) {
         return 0;
     } else {
