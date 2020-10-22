@@ -8,25 +8,43 @@ function set_light(selected_option) {
         curr_sel = canvas.tokens.ownedTokens[0];
     }
 
-    let upd = {brightLight: selected_option[0], dimLight: selected_option[1]};
-    if(selected_option.length >= 2) {
-        upd["lightColor"] = selected_option[2];
-    }
-    if(selected_option.length >= 3) {
-        upd["lightAlpha"] = selected_option[3];
-    }
-
     // Apply all
     for(let sel of curr_sel) {
-        sel.update(upd);
+        sel.update(selected_option);
     }
 }
 
 // Form = [bright radius, dim radius, color hex (optional), alpha (optional)]
 const light_options = {
-    "None": [0, 0],
-    "Hooded Lantern": [0, 5, "#e5ae6c", .6],
-    "Unhooded Lantern": [30, 60, "#f97959", .9]
+    "None": {
+        dimLight: 0,
+        brightLight: 0,
+        lightColor: "#000000",
+        lightAnimation: {
+            intensity: 1,
+            speed: 1
+        },
+    },
+    "Hooded Lantern": {
+        dimLight: 5,
+        brightLight: 0,
+        lightColor: "#eeffbb",
+        lightAlpha: 0.45,
+        lightAnimation: {
+            intensity: 3,
+            speed: 1
+        },
+    },
+    "Unhooded Lantern": {
+        dimLight: 60,
+        brightLight: 30,
+        lightColor: "#d3fe54",
+        lightAlpha: 0.2,
+        lightAnimation: {
+            intensity: 1,
+            speed: 1
+        },
+    },
 };
 
 function gen_opt(label, light_dat) {

@@ -50,7 +50,6 @@ function run(dice_count, crit) {
 
     // Get rid of the extras. This should only have an effect on crits
     drill.keepHighest(final_keep);
-    console.log(drill);
 
     // Make a fake roll
     let roll = new Roll("4d6", {});
