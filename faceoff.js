@@ -40,7 +40,7 @@ const curr_targets = Array.from(game.user.targets);
 const curr_sel = canvas.tokens.controlled;
 
 if(curr_targets.length == 0) {
-    return "taarget at least one token";
+    return "target at least one token";
 }
 
 if(curr_sel.length == 0) {
