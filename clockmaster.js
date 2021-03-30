@@ -35,8 +35,10 @@ async function main() {
         img: icon,
         token: {
             img: icon,
-            displayName: 50
-        }
+            displayName: 50,
+            actorLink: true
+        },
+        actorLink: true
       });
 
       // Prepare the Token data
