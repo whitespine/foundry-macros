@@ -10,7 +10,7 @@ async function set_element(dat) {
             damage: {
                 parts: [
                     [
-                    "1d6 + @mod + 1" + dat.suffix,
+                    "1d8 + @mod + 1" + dat.suffix,
                     "slashing"
                     ]
                 ]

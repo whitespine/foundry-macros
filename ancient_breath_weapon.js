@@ -12,7 +12,7 @@ async function set_element(dat) {
             damage: {
                 parts: [
                     [
-                    "2d6",
+                    "2d8 + 4",
                     dat.type
                     ]
                 ]
