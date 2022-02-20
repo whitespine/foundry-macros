@@ -10,7 +10,7 @@ class LiveFormDialog extends Dialog {
     get form_data() {
         if (!this.curr_form) { return this.data.init; }
         let form_data = new FormDataExtended(this.curr_form.find("form")[0]);
-        return form_data.toObject();
+        return foundry.utils.expandObject(form_data.toObject());
     }
 
     async _renderInner(data) {
@@ -19,12 +19,8 @@ class LiveFormDialog extends Dialog {
 
         // Go super
         this.curr_form = await super._renderInner(data);
-        console.log(this.curr_form);
         this.curr_form = this.curr_form.map((i, e) => i == 0 ? ($(e).children().wrapAll("<form>") && e) : e);
-        console.log(1 / 0);
-        console.log(this.curr_form);
-        console.log(this.curr_form.filter(".dialog-content"));
-        console.log(this.curr_form.filter(".dialog-content").wrap("<form>"));
+
 
         // Attach our listeners
         $(this.curr_form).on("change", () => {
